@@ -12,6 +12,7 @@ fi
 
 source "$CONFIG_FILE"
 
+: "${LABEL:="com.${USER}.rename-screenshots"}"
 : "${SCREENSHOT_DIR:="$HOME/Documents/Screenshots"}"
 : "${MODEL:="gemma4:e2b"}"
 : "${OLLAMA_API_URL:="http://localhost:11434/api/chat"}"
@@ -196,7 +197,7 @@ main() {
     exit 1
   fi
 
-  log "=== screenshot rename run started (dry_run=$DRY_RUN) ==="
+  log "=== screenshot rename run started (dry_run=$DRY_RUN, model=$MODEL) ==="
 
   find "$SCREENSHOT_DIR" -maxdepth 1 -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | \
   while IFS= read -r file; do
