@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>__LABEL__</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/zsh</string>
+      <string>-lc</string>
+      <string>CONFIG_FILE="__CONFIG_FILE__" /bin/zsh "__SCRIPT_PATH__"</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>DRY_RUN</key>
+      <string>__DRY_RUN__</string>
+    </dict>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+      <key>Hour</key>
+      <integer>__SCHEDULE_HOUR__</integer>
+      <key>Minute</key>
+      <integer>__SCHEDULE_MINUTE__</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>__STDOUT_LOG__</string>
+
+    <key>StandardErrorPath</key>
+    <string>__STDERR_LOG__</string>
+  </dict>
+</plist>
